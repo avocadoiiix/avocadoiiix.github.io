@@ -1,55 +1,19 @@
-extends base
+extends widget/base
 
-block title
-  if config.subtitle
-    title= config.title + ' | ' + config.subtitle
-  else
-    title= config.title
+block append head
+    link(rel='stylesheet', href= url_for("/style/widget-post-list.css"))
 
 block content
-  for post in page.posts.toArray()
-    .post
-      h1.post-title
-        include _partial/helpers.pug
-        a(href=url_for(post.path))
-          +title(post)
-      .post-meta= post.date.format(config.date_format)
-      if theme.disqus.enable == true
-        a.disqus-comment-count(data-disqus-identifier=post.path, href=url_for(post.path) + '#disqus_thread')
-      if theme.changyan
-        a.ds-thread-count(href=url_for(post.path) + '#SOHUCS')
-          span.cy_cmt_count(id='sourceId::' + post.date.valueOf() style='margin: 0 3px 0 1px;') 0
-          span= ' ' + __('Comment')
-      if post.description
-        .post-content
-          != post.description
-      else if post.excerpt
-        .post-content
-          != post.excerpt
-      else if post.content
-        - var br = 0
-        - for (var i = 0; i < 5; ++i) {
-          - br = post.content.indexOf('\n',br+1)
-          if br<0
-            - break
-          if br >150
-            - break
-        - }
-        if br < 0
-          .post-content
-            != post.content
-        else
-          .post-content
-            != post.content.substring(0, br)
-      p.readmore
-        a(href=url_for(post.path))= __('Readmore')
-
-  include _partial/paginator.pug
-  if theme.disqus.enable == true
-    script#dsq-count-scr(src='//'+ theme.disqus.shortname + '.disqus.com/count.js', async)
-  if theme.changyan
-    script#cy_cmt_num(src='https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=' + theme.changyan, async)
-  if config.mathjax
-    include _partial/mathjax.pug
-  if config.mathjax2
-    include _partial/mathjax2.pug
+    include widget/widget-post-list
+        block sidebar
+            include widget/widget-search
+            if theme.widgets.includes('profile')
+                include widget/widget-profile
+            if theme.widgets.includes('recent_posts')
+                include widget/widget-recent
+            if theme.widgets.includes('category') && site.categories.length > 0
+                include widget/widget-categories
+            if theme.widgets.includes('archive')
+                include widget/widget-archives
+            if theme.widgets.includes('tag') && site.tags.length > 0
+                include widget/widget-tag
