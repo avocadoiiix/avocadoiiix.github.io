@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-12T08:00:59.566Z</updated>
+  <updated>2022-07-13T15:28:45.111Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>洋蔥的DNA</title>
+    <link href="http://example.com/2022/07/13/%E6%B4%8B%E8%94%A5%E7%9A%84DNA/"/>
+    <id>http://example.com/2022/07/13/%E6%B4%8B%E8%94%A5%E7%9A%84DNA/</id>
+    <published>2022-07-13T15:23:28.000Z</published>
+    <updated>2022-07-13T15:28:45.111Z</updated>
+    
+    <content type="html"><![CDATA[<p>![]<a href="https://live.staticflickr.com/65535/52212835442_a9437e2a9c_s.jpg)*Photograph">https://live.staticflickr.com/65535/52212835442_a9437e2a9c_s.jpg)*Photograph</a> by <a href="https://www.flickr.com/photos/195758734@N06/52108054632/in/dateposted-public/">Tony Chen</a> (flickr)*<br>(P.S.不是我的手)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;![]&lt;a href=&quot;https://live.staticflickr.com/65535/52212835442_a9437e2a9c_s.jpg)*Photograph&quot;&gt;https://live.staticflickr.com/65535/52212835442</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>程式筆記-二元搜尋法</title>
